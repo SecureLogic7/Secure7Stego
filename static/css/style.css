@@ -1,0 +1,42 @@
+body {
+    background-color: #121212; /* Cor de fundo escura */
+    color: #e0e0e0; /* Cor do texto clara */
+}
+
+.container {
+    background-color: #1a1a1a; /* Fundo do container escuro */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra mais pronunciada */
+}
+
+.card {
+    margin-bottom: 20px;
+    background-color: #2a2a2a; /* Fundo das cartas */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 15px; /* Espaçamento interno */
+}
+
+.card-title {
+    margin-bottom: 20px;
+    color: #ffffff; /* Cor do título da carta */
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #1a1a1a; /* Fundo do rodapé */
+    color: #e0e0e0; /* Cor do texto do rodapé */
+}
+
+.instructions {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #b0b0b0; /* Cor do texto das instruções */
+}
+
+.image-instructions {
+    margin-top: 20px;
+    text-align: center;
+}

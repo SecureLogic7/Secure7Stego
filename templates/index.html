@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure7Stego Pro 1.02</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+        .card-title {
+            margin-bottom: 20px;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            padding: 10px;
+            background-color: #f8f9fa;
+        }
+        .instructions {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #6c757d;
+        }
+        .image-instructions {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Secure7Stego Pro</h1>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-lock"></i> Encriptar Imagem</h5>
+                        <form method="POST" action="/encrypt" enctype="multipart/form-data" onsubmit="return validateImages()">
+                            <div class="form-group">
+                                <label for="texto">Texto:</label>
+                                <textarea class="form-control" id="texto" name="texto" rows="4" placeholder="Digite o texto aqui..."></textarea>
+                                <button type="button" class="btn btn-secondary mt-2" onclick="document.getElementById('texto').value='Texto de exemplo'"><i class="fas fa-plus"></i> Adicionar Texto</button>
+                                <div class="instructions">
+                                    <p><strong>Instruções:</strong> O texto deve estar em formato .txt e não deve exceder 1000 caracteres.</p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="imagem_chave">Imagem Chave:</label>
+                                <input type="file" class="form-control-file" id="imagem_chave" name="imagem_chave" required>
+                                <div class="image-instructions">
+                                    <img src="https://via.placeholder.com/300x200" alt="Proporção da Imagem" class="img-fluid mt-2">
+                                    <p><strong>Instruções:</strong> A imagem deve estar em formato .png ou .jpg e ter uma proporção de 3:2.</p>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-lock"></i> Encriptar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="fas fa-unlock"></i> Decriptar Imagem</h5>
+                        <form method="POST" action="/decrypt" enctype="multipart/form-data" onsubmit="return validateImages()">
+                            <div class="form-group">
+                                <label for="imagem_saida">Imagem Encriptada:</label>
+                                <input type="file" class="form-control-file" id="imagem_saida" name="imagem_saida" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="imagem_chave_decrypt">Imagem Chave:</label>
+                                <input type="file" class="form-control-file" id="imagem_chave_decrypt" name="imagem_chave_decrypt" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary"><i class="fas fa-unlock"></i> Decriptar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 SecureLogic7 - Secure7Stego. Todos os direitos reservados.</p>
+    </div>
+
+    <!-- Bootstrap JS e dependências -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function validateImages() {
+            const imagemChave = document.getElementById('imagem_chave').files[0];
+            const imagemSaida = document.getElementById('imagem_saida').files[0];
+
+            if (imagemChave && imagemSaida && imagemChave.name === imagemSaida.name) {
+                alert('A imagem chave deve ser diferente da imagem de saída por questões de segurança.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
