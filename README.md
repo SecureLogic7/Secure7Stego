@@ -60,9 +60,7 @@ Secure7Stego Pro é um aplicativo Flask para criptografar e decriptografar image
 
 ## Estrutura do Projeto
 
-Para publicar seu aplicativo no GitHub, você precisará criar um repositório e adicionar os arquivos necessários. Vamos revisar e criar os arquivos essenciais para garantir que tudo esteja correto e pronto para ser publicado.
-Estrutura do Projeto
-A estrutura do seu projeto deve ser algo como:
+A estrutura do seu projeto
 PROJETOSECURE7PRO/
 ├── app.py
 ├── config.py
@@ -89,6 +87,6 @@ Secure7Stego Pro é um aplicativo Flask para criptografar e decriptografar image
 name='Secure7Stego_pro',
 version='1.02',
 author='Nelsomar Barros','Securelogic7'
-author_email='nelsom.one8@gmail.com',
+author_email='',
 changes='Versão 1.02: Melhoria de segurança e encriptação com uso de interface gráfica web.',
 """
